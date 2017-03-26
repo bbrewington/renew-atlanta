@@ -44,6 +44,9 @@ for(i in seq_along(project_info)){
     data_frame(project_page = rep(project_page_links[i], times = nrow(project_info[[i]]))),
       project_info[[i]])
 }
-project_details_df <- bind_rows(project_info_temp) %>% spread(field, value)
-write_csv(project_details_df, "project_details.csv")
-write_csv(data_frame(project_page_links), "project_page_links.csv")
+project_details_df <- 
+  bind_rows(project_info_temp) %>% 
+  spread(field, value) %>%
+  select(-`Project Type`, -`Phase 1`, -`Phase 2`)
+
+write_csv(project_details_df, "project_details.csv", na = "")
