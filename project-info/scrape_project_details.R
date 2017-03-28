@@ -1,3 +1,11 @@
+### Scrape Project Details
+
+# Each project has a page on the website, with some basic details, such as project name,
+# project timeline, and project budget. This code crawls through a list of all projects, 
+# and grabs the basic info
+
+## TODO: Need to account for multi-phase projects
+
 library(rvest); library(dplyr); library(stringr)
 library(tidyr); library(readr)
 
